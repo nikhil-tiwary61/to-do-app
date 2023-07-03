@@ -1,16 +1,17 @@
-import tasks from "../data/Tasks";
 import NewItem from "./NewItem";
 
-const TaskList = () => {
+export default function TaskList({ tasks }) {
   return (
     <div>
       {tasks.map((task) => {
         return (
-          <NewItem title={task.title} description={task.description}></NewItem>
+          <NewItem
+            key={task.id}
+            title={task.title}
+            description={task.description}
+          ></NewItem>
         );
       })}
     </div>
   );
-};
-
-export default TaskList;
+}
