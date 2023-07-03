@@ -1,10 +1,10 @@
 import "./NewItem.css";
 
-export default function NewItem() {
+export default function NewItem({ title, description }) {
   return (
     <div className="task">
-      <h3>TASK</h3>
-      <p>Description</p>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   );
 }
