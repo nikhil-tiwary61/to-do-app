@@ -15,8 +15,10 @@ export default function NewItem({ id, title, description, deleteTask }) {
     <div className="task" onClick={handleClick}>
       <h3>{title}</h3>
       <p>{description}</p>
-      <div>Status : {status}</div>
-      <button onClick={handleDelete}>Delete</button>
+      <div className="status">Status : {status}</div>
+      <button onClick={handleDelete} className="delete">
+        X
+      </button>
     </div>
   );
 }
