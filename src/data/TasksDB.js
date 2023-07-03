@@ -1,2 +1,4 @@
-const tasksDB = [{ title: "task1", description: "description", id: "1" }];
+const tasksDB = [
+  { title: "Task Title", description: "Description about the task.", id: "1" },
+];
 export default tasksDB;
