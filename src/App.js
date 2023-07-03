@@ -8,14 +8,16 @@ function App() {
   const [tasks, setTasks] = useState(tasksDB);
   function addTask(task) {
     setTasks([...tasks, { ...task, id: tasks.length + 1 }]);
-    console.log("tasks", tasks);
+  }
+  function deleteTask(id) {
+    setTasks(tasks.filter((task) => task.id !== id));
   }
   return (
     <div className="App">
       <>
         <h1>To-Do List</h1>
         <Form addTask={addTask}></Form>
-        <TaskList tasks={tasks}></TaskList>
+        <TaskList tasks={tasks} deleteTask={deleteTask}></TaskList>
       </>
     </div>
   );
