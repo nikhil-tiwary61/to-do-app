@@ -1,4 +1,4 @@
-import NewItem from "./NewItem";
+import NewItem from "./NewTask";
 
 export default function TaskList({ tasks }) {
   return (
