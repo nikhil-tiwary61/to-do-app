@@ -12,7 +12,10 @@ export default function NewItem({ id, title, description, deleteTask }) {
     deleteTask(id);
   }
   return (
-    <div className="task" onClick={handleClick}>
+    <div
+      className={status === "Pending" ? "pending" : "completed"}
+      onClick={handleClick}
+    >
       <h3>{title}</h3>
       <p>{description}</p>
       <div className="status">Status : {status}</div>
