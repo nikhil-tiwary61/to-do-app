@@ -1,4 +1,9 @@
 const tasksDB = [
-  { title: "Task Title", description: "Description about the task.", id: "1" },
+  {
+    id: "1",
+    title: "Task Title",
+    description: "Description about the task.",
+    status: "Pending",
+  },
 ];
 export default tasksDB;

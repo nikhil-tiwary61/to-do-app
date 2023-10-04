@@ -8,16 +8,27 @@ function App() {
   const [tasks, setTasks] = useState(tasksDB);
   function addTask(task) {
     setTasks([...tasks, { ...task, id: tasks.length + 1 }]);
+    console.log(tasks);
   }
   function deleteTask(id) {
     setTasks(tasks.filter((task) => task.id !== id));
+  }
+  function changeStatus(id, status) {
+    const otherTasks = tasks.filter((task) => task.id !== id);
+    const targetTask = tasks.filter((task) => task.id === id);
+    targetTask.status = status === "Pending" ? "Completed" : "Pending";
+    setTasks([...otherTasks, targetTask]);
   }
   return (
     <div className="App">
       <>
         <h1>To-Do List</h1>
         <Form addTask={addTask}></Form>
-        <TaskList tasks={tasks} deleteTask={deleteTask}></TaskList>
+        <TaskList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          changeStatus={changeStatus}
+        ></TaskList>
       </>
     </div>
   );

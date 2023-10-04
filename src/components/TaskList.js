@@ -3,10 +3,10 @@ import NewItem from "./NewTask";
 export default function TaskList({ tasks, deleteTask }) {
   return (
     <div>
-      {tasks.map((task) => {
+      {tasks.map((task, index) => {
         return (
           <NewItem
-            key={task.id}
+            key={index}
             id={task.id}
             title={task.title}
             description={task.description}

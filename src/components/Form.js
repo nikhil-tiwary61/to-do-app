@@ -2,7 +2,7 @@ import "./Form.css";
 import { useState } from "react";
 
 export default function Form({ addTask }) {
-  const [task, setTask] = useState(null);
+  const [task, setTask] = useState({ status: "Pending" });
   function handleChange(e) {
     e.stopPropagation();
     setTask({ ...task, [e.target.name]: e.target.value });
